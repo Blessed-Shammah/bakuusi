@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bakuusi Clan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/clan-emblem.png" alt="Bakuusi Clan Emblem">
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#history">History</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#events">Events</a></li>
+                </ul>
+            </nav>
+            <button class="register-btn glow-effect">Register</button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="slideshow-container">
+            <div class="slides fade">
+                <img src="../images/slide1.jpg" alt="Clan Event 1">
+            </div>
+            <div class="slides fade">
+                <img src="../images/slide2.jpg" alt="Clan Event 2">
+            </div>
+            <div class="slides fade">
+                <img src="../images/slide3.jpg" alt="Clan Event 3">
+            </div>
+            
+            <!-- Navigation arrows -->
+            <a class="prev" onclick="changeSlide(-1)">❮</a>
+            <a class="next" onclick="changeSlide(1)">❯</a>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1>Preserving Our Heritage, Celebrating Our Legacy</h1>
+                <p>Join our community and be part of our rich cultural heritage</p>
+                <div class="hero-buttons">
+                    <button class="primary-btn glow-effect">Join Us Today!</button>
+                    <button class="secondary-btn glow-effect">Learn More</button>
+                </div>
+                <div class="hero-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notices Section -->
+    <section class="notices">
+        <div class="container">
+            <h2>Notices & Announcements</h2>
+            <div class="card-grid">
+                <!-- Cards will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Streaming Section -->
+    <section class="live-stream">
+        <div class="container">
+            <h2>Live Events</h2>
+            <div class="stream-container">
+                <div class="video-player">
+                    <!-- Video player placeholder -->
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <p>Live Stream Coming Soon</p>
+                    </div>
+                </div>
+                <div class="upcoming-events">
+                    <h3>Upcoming Events</h3>
+                    <div class="events-list">
+                        <!-- Events will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <!-- Update the News Section in index.html -->
+    <section class="news">
+        <div class="container">
+            <h2>News & Family Briefs</h2>
+            <div class="news-scroll-container">
+                <button class="scroll-btn left" id="scrollLeft">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="news-scroll-wrapper">
+                    <div class="news-grid">
+                        <!-- News cards will be dynamically added here -->
+                    </div>
+                </div>
+                <button class="scroll-btn right" id="scrollRight">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/clan-emblem.png" alt="Bakuusi Clan Emblem">
+                    <p>Preserving and celebrating our cultural heritage for future generations.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#history">History</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="glow-effect"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="glow-effect"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="glow-effect"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="glow-effect"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="glow-effect"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit" class="glow-effect">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bakuusi Clan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
