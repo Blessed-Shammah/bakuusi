@@ -12,7 +12,7 @@
 /* About Hero Section */
 .about-hero {
     position: relative;
-    background: url('../images/about-bg.jpg') no-repeat center center;
+    background: url('images/about-bg.jpg') no-repeat center center;
     background-size: cover;
     height: 400px;
     margin-top: 80px;
