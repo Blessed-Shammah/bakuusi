@@ -96,7 +96,7 @@ header .container {
 /* Hero Section */
 .about-hero {
     position: relative;
-    background: url('/images/history-bg.jpg') no-repeat center center;
+    background: url('images/history-bg.jpg') no-repeat center center;
     background-size: cover;
     height: 400px;
     margin-top: 80px;
