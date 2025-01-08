@@ -129,12 +129,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Add scroll indicator if there are more than 6 items
-        if (filteredEvents.length > 6) {
-            const indicator = document.createElement('div');
-            indicator.className = 'scroll-indicator';
-            indicator.innerHTML = `<span>Scroll to see more events</span>`;
-            galleryGrid.appendChild(indicator);
-        }
+        // if (filteredEvents.length > 6) {
+        //     const indicator = document.createElement('div');
+        //     indicator.className = 'scroll-indicator';
+        //     indicator.innerHTML = `<span>Scroll to see more events</span>`;
+        //     galleryGrid.appendChild(indicator);
+        // }
     }
 
     // Filter Button Event Listeners
