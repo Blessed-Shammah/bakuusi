@@ -99,7 +99,7 @@ header .container {
     background: url('images/history-bg.jpg') no-repeat center center;
     background-size: cover;
     height: 400px;
-    margin-top: 80px;
+    margin-top: 0px;
     display: flex;
     align-items: center;
     text-align: center;

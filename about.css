@@ -15,7 +15,7 @@
     background: url('images/about-bg.jpg') no-repeat center center;
     background-size: cover;
     height: 400px;
-    margin-top: 80px;
+    margin-top: 0px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -372,7 +372,7 @@ section {
 @media print {
     .about-hero {
         height: auto;
-        margin-top: 20px;
+        margin-top: 0px;
     }
     
     .history-image,

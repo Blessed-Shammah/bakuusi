@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#00D094">
+    <title>News - Bakuusi Clan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="news.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/clan-emblem.png" alt="Bakuusi Clan Emblem">
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="news.html" class="active">News</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </nav>
+            <button class="register-btn glow-effect">
+                Register <i class="fas fa-arrow-right"></i>
+            </button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- News Hero Section -->
+    <section class="news-hero">
+        <div class="overlay"></div>
+        <div class="container">
+            <h1>Clan News & Updates</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="news.html" class="active">News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Categories Section -->
+    <section class="news-categories">
+        <div class="container">
+            <div class="category-filters">
+                <button class="category-btn active glow-effect" data-category="all">
+                    <i class="fas fa-globe"></i> All News
+                </button>
+                <button class="category-btn glow-effect" data-category="announcements">
+                    <i class="fas fa-bullhorn"></i> Announcements
+                </button>
+                <button class="category-btn glow-effect" data-category="family">
+                    <i class="fas fa-users"></i> Family Updates
+                </button>
+                <button class="category-btn glow-effect" data-category="achievements">
+                    <i class="fas fa-trophy"></i> Achievements
+                </button>
+                <button class="category-btn glow-effect" data-category="community">
+                    <i class="fas fa-hands-helping"></i> Community News
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured News Section -->
+    <section class="featured-news">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Stories</h2>
+                <p class="subtitle">Latest Updates from Our Clan</p>
+            </div>
+            <div class="featured-news-grid">
+                <!-- Featured news items will be dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent News Section -->
+    <section class="recent-news">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recent News</h2>
+                <p class="subtitle">Stay Updated with Clan Activities</p>
+            </div>
+            <div class="news-grid">
+                <!-- News items will be dynamically loaded -->
+            </div>
+            <div class="load-more">
+                <button class="load-more-btn glow-effect">
+                    Load More News <i class="fas fa-sync"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Connected</h2>
+                <p>Subscribe to our newsletter for regular updates</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="glow-effect">
+                        Subscribe <i class="far fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/clan-emblem.png" alt="Bakuusi Clan Emblem">
+                    <p>Preserving and celebrating our cultural heritage for future generations.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="history.html">History</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="glow-effect"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="glow-effect"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="glow-effect"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="glow-effect"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="glow-effect"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="glow-effect"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit" class="glow-effect">
+                            Subscribe <i class="far fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bakuusi Clan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="news.js"></script>
+</body>
+</html>
