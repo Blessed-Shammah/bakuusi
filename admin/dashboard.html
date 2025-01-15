@@ -1,0 +1,198 @@
+<!-- admin/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Bakuusi Clan</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../images/clan-emblem.png" alt="Bakuusi Clan Logo">
+                <h2>Admin Panel</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="users.html">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="events.html">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Events</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="announcements.html">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>Announcements</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="news.html">
+                            <i class="fas fa-newspaper"></i>
+                            <span>News</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="media.html">
+                            <i class="fas fa-images"></i>
+                            <span>Media Gallery</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="top-bar-right">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="admin-profile">
+                        <img src="../images/admin-avatar.jpg" alt="Admin">
+                        <span>Admin Name</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Metrics Overview -->
+                <section class="metrics-section">
+                    <h2>Overview</h2>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-icon users">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h3>Active Users</h3>
+                                <p class="metric-number">1,234</p>
+                                <p class="metric-trend positive">
+                                    <i class="fas fa-arrow-up"></i> 12% from last month
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon events">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h3>Event Views</h3>
+                                <p class="metric-number">5,678</p>
+                                <p class="metric-trend positive">
+                                    <i class="fas fa-arrow-up"></i> 8% from last month
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon streams">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h3>Live Stream Engagement</h3>
+                                <p class="metric-number">892</p>
+                                <p class="metric-trend negative">
+                                    <i class="fas fa-arrow-down"></i> 3% from last month
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon downloads">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <div class="metric-info">
+                                <h3>Document Downloads</h3>
+                                <p class="metric-number">3,456</p>
+                                <p class="metric-trend positive">
+                                    <i class="fas fa-arrow-up"></i> 15% from last month
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Actions -->
+                <section class="quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="actions-grid">
+                        <button class="action-btn announcements">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>New Announcement</span>
+                        </button>
+                        <button class="action-btn events">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>Create Event</span>
+                        </button>
+                        <button class="action-btn news">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Post News</span>
+                        </button>
+                        <button class="action-btn media">
+                            <i class="fas fa-upload"></i>
+                            <span>Upload Media</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Recent Activity -->
+                <section class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>New Member Registration</h4>
+                                <p>John Doe requested membership approval</p>
+                                <span class="activity-time">2 minutes ago</span>
+                            </div>
+                            <div class="activity-actions">
+                                <button class="approve">Approve</button>
+                                <button class="reject">Reject</button>
+                            </div>
+                        </div>
+                        <!-- Add more activity items -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
