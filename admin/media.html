@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Gallery - Bakuusi Clan</title>
+    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../images/clan-emblem.png" alt="Bakuusi Clan Logo">
+                <h2>Admin Panel</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="users.html">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="events.html">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Events</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="announcements.html">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>Announcements</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="news.html">
+                            <i class="fas fa-newspaper"></i>
+                            <span>News</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="media.html">
+                            <i class="fas fa-images"></i>
+                            <span>Media Gallery</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search media...">
+                </div>
+                <div class="top-bar-right">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="admin-profile">
+                        <img src="../images/admin-avatar.jpg" alt="Admin">
+                        <span>Admin Name</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Media Gallery Content -->
+            <div class="media-container">
+                <!-- Header Section -->
+                <div class="media-header">
+                    <div class="header-left">
+                        <h1>Media Gallery</h1>
+                        <div class="breadcrumb">
+                            <span>Home</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span class="current-folder">All Media</span>
+                        </div>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn-secondary" onclick="mediaGallery.openAlbumModal()">
+                            <i class="fas fa-folder-plus"></i> New Album
+                        </button>
+                        <button class="btn-primary" onclick="mediaGallery.openUploadModal()">
+                            <i class="fas fa-cloud-upload-alt"></i> Upload Media
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tools Section -->
+                <div class="media-tools">
+                    <div class="tools-left">
+                        <select id="filterType" class="filter-select">
+                            <option value="all">All Types</option>
+                            <option value="image">Images</option>
+                            <option value="video">Videos</option>
+                            <option value="document">Documents</option>
+                        </select>
+                        <select id="sortBy" class="filter-select">
+                            <option value="date-desc">Newest First</option>
+                            <option value="date-asc">Oldest First</option>
+                            <option value="name-asc">Name A-Z</option>
+                            <option value="name-desc">Name Z-A</option>
+                            <option value="size">Size</option>
+                        </select>
+                    </div>
+                    <div class="tools-right">
+                        <div class="view-options">
+                            <button class="view-btn active" data-view="grid">
+                                <i class="fas fa-th-large"></i>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                        <button class="btn-icon" id="selectAllBtn">
+                            <i class="fas fa-check-square"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Media Content -->
+                <div class="media-content">
+                    <!-- Albums Section -->
+                    <div class="albums-section" id="albumsContainer">
+                        <!-- Albums will be dynamically added here -->
+                    </div>
+
+                    <!-- Media Grid View -->
+                    <div class="media-grid active" id="mediaGrid">
+                        <!-- Media items will be dynamically added here -->
+                    </div>
+
+                    <!-- Media List View -->
+                    <div class="media-list" id="mediaList">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" id="selectAll"></th>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th>Modified</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Media items will be dynamically added here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Upload Media Modal -->
+    <div class="modal" id="uploadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Upload Media</h2>
+                <button class="close-modal" onclick="mediaGallery.closeModal('uploadModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="fileInput" multiple accept="image/*,video/*,.pdf,.doc,.docx" hidden>
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Drag & Drop files here</h3>
+                    <p>or</p>
+                    <button class="btn-secondary" onclick="document.getElementById('fileInput').click()">
+                        Browse Files
+                    </button>
+                </div>
+                <div class="upload-preview">
+                    <h3>Selected Files</h3>
+                    <div class="upload-list" id="uploadList"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="mediaGallery.closeModal('uploadModal')">Cancel</button>
+                <button class="btn-primary" onclick="mediaGallery.uploadFiles()">Upload Files</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Album Modal -->
+    <div class="modal" id="albumModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Album</h2>
+                <button class="close-modal" onclick="mediaGallery.closeModal('albumModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="albumForm" onsubmit="mediaGallery.createAlbum(event)">
+                    <div class="form-group">
+                        <label for="albumName">Album Name</label>
+                        <input type="text" id="albumName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="albumDescription">Description (Optional)</label>
+                        <textarea id="albumDescription" rows="3"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-secondary" onclick="mediaGallery.closeModal('albumModal')">Cancel</button>
+                        <button type="submit" class="btn-primary">Create Album</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Media Preview Modal -->
+    <div class="modal" id="previewModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="mediaGallery.closeModal('previewModal')">&times;</button>
+            <div class="preview-container">
+                <!-- Preview content will be added here -->
+            </div>
+            <div class="preview-info">
+                <!-- File information will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="media.js"></script>
+</body>
+</html>
