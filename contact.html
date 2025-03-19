@@ -56,7 +56,7 @@
                     </div>
                     <h3>Visit Us</h3>
                     <p>123 Clan Street</p>
-                    <p>Busoga Kingdom, Kenya</p>
+                    <p>Western, Kenya</p>
                 </div>
                 <div class="info-card">
                     <div class="icon">
@@ -201,5 +201,162 @@
     </footer>
 
     <script src="contact.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your public key
+        // You'll need to sign up for EmailJS (https://www.emailjs.com/) and get your public key
+        document.addEventListener('DOMContentLoaded', function() {
+            emailjs.init("W3WJ8cNatriEA4E2M"); // Replace with your actual public key
+        });
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Show loading state
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('service_kmjw7v7', 'template_04w7tq2', formData)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success message
+                    showNotification('Thank you! Your message has been sent successfully.', 'success');
+                    
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                })
+                .catch(function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Show error message
+                    showNotification('Sorry, there was a problem sending your message. Please try again later.', 'error');
+                })
+                .finally(function() {
+                    // Reset button
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+        });
+
+        // Create notification function
+        function showNotification(message, type) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <span>${message}</span>
+                    <button class="close-notification">&times;</button>
+                </div>
+            `;
+            
+            // Add notification to the page
+            document.body.appendChild(notification);
+            
+            // Add CSS for notification
+            if (!document.getElementById('notification-styles')) {
+                const style = document.createElement('style');
+                style.id = 'notification-styles';
+                style.innerHTML = `
+                    .notification {
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        padding: 15px 20px;
+                        border-radius: 5px;
+                        z-index: 1000;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                        transition: opacity 0.3s ease;
+                        max-width: 350px;
+                    }
+                    .notification-content {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                    .notification.success {
+                        background-color: #d4edda;
+                        color: #155724;
+                        border-left: 4px solid #28a745;
+                    }
+                    .notification.error {
+                        background-color: #f8d7da;
+                        color: #721c24;
+                        border-left: 4px solid #dc3545;
+                    }
+                    .close-notification {
+                        background: none;
+                        border: none;
+                        color: inherit;
+                        font-size: 20px;
+                        cursor: pointer;
+                        margin-left: 10px;
+                        padding: 0 5px;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            // Add event listener to close button
+            notification.querySelector('.close-notification').addEventListener('click', function() {
+                document.body.removeChild(notification);
+            });
+            
+            // Automatically remove notification after 5 seconds
+            setTimeout(function() {
+                if (document.body.contains(notification)) {
+                    notification.style.opacity = '0';
+                    setTimeout(function() {
+                        if (document.body.contains(notification)) {
+                            document.body.removeChild(notification);
+                        }
+                    }, 300);
+                }
+            }, 5000);
+        }
+
+        // Add form input validation
+        const formInputs = document.querySelectorAll('.form-group input, .form-group textarea, .form-group select');
+        formInputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() !== '') {
+                    this.classList.add('has-value');
+                } else {
+                    this.classList.remove('has-value');
+                }
+            });
+        });
+
+        // FAQ toggle functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('.toggle-icon');
+                
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    icon.textContent = '+';
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.textContent = '-';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
